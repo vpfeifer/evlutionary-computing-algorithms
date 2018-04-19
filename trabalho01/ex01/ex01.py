@@ -9,7 +9,7 @@ import matplotlib.pyplot as plotter
 # 3 - Imprime os detalhes da selecao dos individuos da proxima geracao
 verbose_level = 0
 
-population_size = 32
+population_size = 8
 
 target = [1,1,1,1,0,1,1,0,1,1,1,1]
 targetSize = len(target)
