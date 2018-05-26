@@ -49,7 +49,6 @@ def define_particles_neighborhood(particles):
             else:
                 particles[i].neighborhood = [particles[i + 1], particles[i - 1]]
 
-
 def init_particles(n):
     particles = []
     for i in range(0,n):
@@ -78,7 +77,6 @@ def get_best_fits_array(particles):
     for p in particles:
         best_fits.append(p.best_fit)
     return best_fits
-
 
 max_it = 50
 vmax = 10

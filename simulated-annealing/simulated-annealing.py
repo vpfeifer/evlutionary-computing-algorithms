@@ -17,7 +17,7 @@ def acceptanceTest(evaluationx, evaluationx1):
     return 1 / math.exp((evaluationx - evaluationx1)/t)
 
 temperature = 0
-x = 0
+x = 0.6
 evaluation = evaluate(x)
 
 counter = 0
@@ -28,11 +28,11 @@ while counter < max_it:
     evaluationx1 = evaluate(x1)
     if evaluationx1 > evaluation:
         x = x1
-        evaluationx = evaluationx1
-    elif random.random() < acceptanceTest(evaluationx, evaluationx1):
+        evaluation = evaluationx1
+    elif random.random() < acceptanceTest(evaluation, evaluationx1):
         x = x1
-        evaluationx = evaluationx1
+        evaluation = evaluationx1
     temperature = 0.95 * temperature
     counter += 1
 
-print "Resultado :", x, "avaliado com",evaluationx
+print "Resultado :", x, "avaliado com",evaluation
