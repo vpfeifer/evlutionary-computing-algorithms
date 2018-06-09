@@ -111,5 +111,11 @@ print "======= RESULT ======"
 best_fits = get_best_fits_array(particles)
 print "The best min was", min(best_fits)
 
-plt.plot(iterations, fit_avgs, fit_mins)
+plt.plot(iterations, fit_avgs, label='Average')
+plt.plot(iterations, fit_mins, label='Min')
+
+plt.xlabel('Iteration')
+
+plt.title('PSO results')
+
 plt.show()   

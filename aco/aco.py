@@ -131,6 +131,7 @@ def update_edges_pheromone_track(edges):
 
 cities_x = []
 cities_y = []
+best_mins = []
 cities = read_file()
 edges = create_graph()
 
@@ -168,6 +169,7 @@ for t in range(0, max_it):
             best_solution_index = ants.index(ant)
             best_solution_path = ant.visited_cities
             best_solution = ant.solution_distance
+    best_mins.append(best_solution)
     update_edges_pheromone_track(edges)
     for ant in ants:
         ant.current_edge = ant.visited_edges[0]
@@ -182,9 +184,13 @@ for city in best_solution_path:
     solution_x.append(city.x)
     solution_y.append(city.y)
 
-print len(solution_x)
-
 print "Best solution:", best_solution
+
+plt.plot(range(0,max_it), best_mins, label="Best solution")
+plt.xlabel('Iteration')
+
+plt.show()
+
 plt.plot(cities_x, cities_y,'o')
 plt.plot(solution_x, solution_y)
 plt.show()
